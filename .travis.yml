@@ -7,7 +7,7 @@ services:
 
 script:
     - docker build --rm -t linkit-smart .
-    - docker run -it linkit-smart /bin/bash -c "make menuconfig; make V=99"
+    - docker run -it linkit-smart /bin/bash -c "make V=99"
 notifications:
     email: false
 
