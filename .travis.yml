@@ -7,16 +7,7 @@ services:
 
 script:
     - docker build --rm -t linkit-smart .
-    # bootloader
-    - docker run -it linkit-smart /bin/bash
-    - cd /linkit-smart-uboot
-    - make
-    # build firmware
-    - docker run -it linkit-smart /bin/bash
-    - cd /openwrt
-    - ./scripts/feeds update && ./scripts/feeds install -a
-    - make menuconfig
-    - make V=99
-
+    - docker run -it linkit-smart /bin/bash -c "make menuconfig; make V=99"
 notifications:
     email: false
+
