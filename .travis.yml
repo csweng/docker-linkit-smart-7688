@@ -10,4 +10,3 @@ script:
     - docker run -it linkit-smart /bin/bash -c "make V=99"
 notifications:
     email: false
-
